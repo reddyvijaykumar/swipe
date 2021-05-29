@@ -3,6 +3,7 @@ import "./Model.css";
 
 const Model = ({ data }) => {
   const [swipeModel, setSwipeModel] = useState(false);
+  const [height, setHeight] = useState(false);
   const [summary, setSummary] = useState([]);
 
   const summaryHandler = (feature) => {
@@ -12,10 +13,11 @@ const Model = ({ data }) => {
   };
   useEffect(() => {
     summaryHandler();
-  }, [summary]);
+  }, [summary, height]);
 
   return (
-    <div className="model">
+    <div className={`model ${height ? "model-height" : "model-height-normal"}`}>
+      {/* <div className="model"> */}
       <div className="model-container">
         <div className={`swipe ${swipeModel ? "swipe-left" : "swipe-right"}`}>
           {/* FEATURES */}
@@ -33,6 +35,8 @@ const Model = ({ data }) => {
                           onClick={() => {
                             setSwipeModel(true);
                             summaryHandler(feature.summary);
+                            // heightHandler(true);
+                            setHeight(true);
                           }}
                         >
                           {feature.name}
@@ -41,6 +45,8 @@ const Model = ({ data }) => {
                           <button
                             onClick={() => {
                               setSwipeModel(true);
+                              // heightHandler(false);
+                              setHeight(true);
                             }}
                           >
                             &gt;
@@ -61,6 +67,7 @@ const Model = ({ data }) => {
               <button
                 onClick={() => {
                   setSwipeModel(false);
+                  setHeight(false);
                 }}
               >
                 &lt;
@@ -81,6 +88,27 @@ const Model = ({ data }) => {
                   );
                 })}
               </ul>
+            </div>
+            <div className="cut-off">
+              <p>SET CUTOFF</p>
+              <p>
+                Minimum value <span>19</span>
+              </p>
+              <p>
+                Maximum value <span>55</span>
+              </p>
+              <p></p>
+
+              <div className="range">
+                <div>MIN</div>
+                <div> 19 - 55</div>
+                <div>MAX</div>
+              </div>
+            </div>
+
+            <div className="action">
+              <button>Apply</button>
+              <button>Cancel</button>
             </div>
           </div>
         </div>

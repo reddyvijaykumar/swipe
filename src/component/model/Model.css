@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+@font-face {
+  font-family: FabExMDL;
+  src: url(../FabExMDL.ttf);
+}
 
 * {
   padding: 0;
@@ -13,6 +17,7 @@
   --carbon-70: #545f74;
   --carbon: #282d38;
   --carbon-neutral-screen-bg: #f8f9fa;
+  --purple-dark-text-links-: ##403883;
 }
 
 .model {
@@ -24,14 +29,26 @@
   border-radius: 6px;
   opacity: 1;
   font-size: 14px;
+  padding-top: 10px;
+  position: absolute;
+  left: 40%;
+  top: 15%;
   /* background-color: aqua; */
-  display: grid;
-  place-content: center;
+  /* display: grid;
+  place-content: center; */
+}
+
+.model-height {
+  height: 630px;
+  /* height: 456px; */
+}
+.model-height-normal {
+  height: 456px;
 }
 
 .model-container {
   width: 420px;
-  height: 410px;
+  height: 630px;
   /* background-color: red; */
   /* overflow-x: auto; */
   overflow: hidden;
@@ -43,10 +60,16 @@
   /* overflow: hidden; */
 }
 
-.model-features,
-.model-summary {
+.model-features {
   width: 400px;
   height: 442px;
+  padding-left: 20px;
+}
+
+.model-summary {
+  width: 400px;
+  /* height: 442px; */
+  height: 630px;
   padding-left: 20px;
 }
 .model-features {
@@ -127,7 +150,7 @@
   cursor: pointer;
   color: var(--carbon-40);
   text-align: left;
-  font: normal normal normal 15px/18px Fabric External MDL2 Assets;
+  font: normal normal normal 15px/18px FabExMDL;
   letter-spacing: 0px;
   color: #909caf;
   opacity: 1;
@@ -140,7 +163,9 @@
 .model-summary .summary {
   overflow-y: auto;
   width: 400px;
-  height: 370px;
+  height: 318px;
+  /* height: 370px; */
+  /* height: 235px; */
 }
 .model-summary .summary li {
   display: flex;
@@ -156,6 +181,7 @@
   background: var(--white) 0% 0% no-repeat padding-box;
   /* border: 1px solid #707070; */
   opacity: 1;
+  font-size: 20px;
 }
 .model-summary .heading p span:last-child {
   height: 27px;
@@ -165,6 +191,7 @@
   font: normal normal normal 20px/27px IBM Plex Sans;
   letter-spacing: 0.01px;
   opacity: 1;
+  font-weight: lighter !important;
 }
 .model-summary #title {
   width: 51px;
@@ -175,6 +202,7 @@
   letter-spacing: 0.3px;
   text-transform: uppercase;
   opacity: 1;
+  padding: 10px 0px 25px 0px;
 }
 .model-summary .heading button {
   width: 12px;
@@ -184,7 +212,7 @@
   cursor: pointer;
   color: var(--carbon-40);
   text-align: left;
-  font: normal normal normal 15px/18px Fabric External MDL2 Assets;
+  font: normal normal normal 15px/18px FabExMDL;
   letter-spacing: 0px;
   color: #909caf;
   opacity: 1;
@@ -205,6 +233,65 @@
   height: 29px;
   background: var(--white) 0% 0% no-repeat padding-box;
   opacity: 1;
+}
+
+.model-summary .cut-off p:first-child {
+  width: 61px;
+  height: 13px;
+  color: var(--carbon);
+  text-align: left;
+  font: normal normal bold 10px/13px IBM Plex Sans;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  opacity: 1;
+  /* font-size: 10px !important; */
+}
+.model-summary .cut-off p:nth-child(2),
+.model-summary .cut-off p:nth-child(3) {
+  /* font-size: 14px; */
+  width: 130px;
+  height: 20px;
+  color: var(--carbon);
+  text-align: left;
+  font: normal normal normal 14px/24px IBM Plex Sans;
+  letter-spacing: 0.14px;
+  opacity: 1;
+  padding: 5px 0px;
+}
+
+.model-summary .cut-off {
+  margin-top: 65px;
+  /* border: 1px solid black; */
+}
+.model-summary .cut-off .range {
+  display: flex;
+  padding-top: 10px;
+}
+
+.model-summary .action {
+  width: 420px;
+  height: 64px;
+  background: var(--carbon-neutral-screen-bg) 0% 0% no-repeat padding-box;
+  border-radius: 0px 0px 6px 6px;
+  opacity: 1;
+  padding: 0 !important;
+  margin: 0 !important;
+  margin: 30px 0px 0px -20px !important;
+}
+.model-summary .action button {
+  /* width: 40px;
+  height: 17px; */
+  color: var(--purple-dark-text-links-);
+  text-align: left;
+  font: normal normal medium 13px/17px IBM Plex Sans;
+  letter-spacing: 0.02px;
+  text-transform: capitalize;
+  color: #574d9b !important;
+  opacity: 1;
+  border-color: #574d9b 1px solid !important;
+  padding: 10px 15px;
+  margin: 10px 15px;
+  border-radius: 5px !important;
 }
 
 /* width */
