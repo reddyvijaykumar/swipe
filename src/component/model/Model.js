@@ -56,8 +56,15 @@ const Model = ({ data }) => {
         >
           {/* <div className="model"> */}
           <div className="model-container">
-            <button className="close" onClick={() => setModalIsOpen(false)}>
-              X
+            <button
+              className="close"
+              onClick={() => {
+                setModalIsOpen(false);
+                setSwipeModel(false);
+                setHeight(false);
+              }}
+            >
+              &times;
             </button>
             <div
               className={`swipe ${swipeModel ? "swipe-left" : "swipe-right"}`}
@@ -102,7 +109,7 @@ const Model = ({ data }) => {
                                   setHeight(true);
                                 }}
                               >
-                                &gt;
+                                &rang;
                               </button>
                             </span>
                           </li>
@@ -122,7 +129,7 @@ const Model = ({ data }) => {
                       setHeight(false);
                     }}
                   >
-                    &lt;
+                    &lang;
                   </button>
                   <p>
                     <span> Subject</span> <span>Ages</span>
