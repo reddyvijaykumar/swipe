@@ -105,6 +105,7 @@ const Model = ({ data }) => {
                               <button
                                 onClick={() => {
                                   setSwipeModel(true);
+                                  summaryHandler(feature.summary);
                                   // heightHandler(false);
                                   setHeight(true);
                                 }}
