@@ -18,9 +18,9 @@ const Model = ({ data }) => {
   });
 
   return (
-    <div>
+    <div style={{ position: "relative" }}>
       <button
-        style={{ position: "absolute", top: "40%", left: "20%" }}
+        style={{ position: "absolute", top: "40vh", left: "20wh" }}
         onClick={() => setModalIsOpen(true)}
       >
         Open modal
@@ -29,8 +29,25 @@ const Model = ({ data }) => {
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
         style={{
+          overlay: {
+            position: "fixed",
+            top: "0px",
+            right: "0px",
+            bottom: "0px",
+            left: "0px",
+            backgroundColor: "rgba(255,255,255,0.3)",
+          },
           content: {
             border: "none",
+            // position: "absolute",
+            // top: "0px",
+            // right: "0px",
+            // bottom: "0px",
+            // left: "0px",
+            backgroundColor: "rgba(255,255,255,0.3)",
+            // borderRadius: "4px",
+            // outline: "none",
+            // padding: "20px 20px 20px 20px",
           },
         }}
       >
@@ -39,16 +56,28 @@ const Model = ({ data }) => {
         >
           {/* <div className="model"> */}
           <div className="model-container">
+            <button className="close" onClick={() => setModalIsOpen(false)}>
+              X
+            </button>
             <div
               className={`swipe ${swipeModel ? "swipe-left" : "swipe-right"}`}
             >
               {/* FEATURES */}
               <div className="model-features">
-                {" "}
-                <button onClick={() => setModalIsOpen(false)}>X</button>
                 {data.map((item, index) => {
-                  return <p key={index}>{item.study_name} </p>;
+                  return (
+                    <p className="feature-title" key={index}>
+                      {item.study_name}
+                    </p>
+                  );
                 })}
+                {/* <button
+                  className="feature-close"
+                  onClick={() => setModalIsOpen(false)}
+                >
+                  X
+                </button> */}
+                {/* <div className="feature-title-close"></div> */}
                 <div className="list">
                   <ul>
                     {data.map((item, index) => {
@@ -86,7 +115,6 @@ const Model = ({ data }) => {
 
               {/* SUMMARY */}
               <div className="model-summary">
-                <button onClick={() => setModalIsOpen(false)}>X</button>
                 <div className="heading">
                   <button
                     onClick={() => {

@@ -66,6 +66,22 @@
   padding-left: 20px;
 }
 
+.model-container .close {
+  float: right;
+  width: 16px;
+  height: 17px;
+  color: var(--carbon-70);
+  text-align: left;
+  font: normal normal normal 15px/16px FabExMDL;
+  letter-spacing: 0px;
+  opacity: 1;
+  border: none;
+  background-color: transparent;
+  margin-right: 4px;
+  margin-top: -3px;
+  cursor: pointer;
+}
+
 .model-summary {
   width: 400px;
   /* height: 442px; */
